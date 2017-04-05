@@ -13,7 +13,8 @@ use Plenty\Plugin\Log\Loggable;
 use Plenty\Modules\EventProcedures\Events\EventProceduresTriggered;
 use Plenty\Modules\Comment\Contracts\CommentRepositoryContract;
 use Plenty\Plugin\ConfigRepository;
-use DateTime;
+use \DateTime;
+use Plenty\Modules\Order\Date;
 
 
 class OrderUpdateEventProcedure {
@@ -63,7 +64,7 @@ class OrderUpdateEventProcedure {
      * @param EventProceduresTriggered $eventTriggered
      * @param DateTime $date
      */
-    public function Procedure(EventProceduresTriggered $eventTriggered, DateTime $date){
+    public function Procedure(EventProceduresTriggered $eventTriggered){
 
 
         /** @var Order $order */
@@ -76,7 +77,7 @@ class OrderUpdateEventProcedure {
 
         //$ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.releasetime');
 
-
+        $date = pluginApp(DateTime::class);
 
         $date->setDate(date("Y"), date("m"), date("d"));
         $date->setTime(15, 00, 00);
