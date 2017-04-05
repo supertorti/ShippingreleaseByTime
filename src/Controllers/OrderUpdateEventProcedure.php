@@ -37,9 +37,10 @@ class OrderUpdateEventProcedure {
     protected $configRepository;
 
     /**
-     * @var DateTime $dateTime
+     * Helper to convert German time to English
+     * @var $TimeCoonvert
      */
-    protected $dateTime;
+    protected $TimeConvert = [ 8 => "8am", 9 => "9am", 10 => "10am", 11 => "11am", 12 => "12am", 13 => "1pm", 14 => "2pm", 15 => "3pm", 16 => "4pm", 17 => "5pm", 18 => "6pm", 19 => "7pm", 20 => "8pm" ];
 
 
     /**
@@ -78,7 +79,7 @@ class OrderUpdateEventProcedure {
         $this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("EventProcedure is triggerd! ");
 
 
-        $FreigabeZeitpunkt = $this->configRepository->get('ShippingreleaseByTime.releasetime');
+        $FreigabeZeitpunkt = $this->TimeConvert[ $this->configRepository->get('ShippingreleaseByTime.releasetime') ];
 
 /*
         $dateTime->setDate(date("Y"), date("m"), date("d"));
