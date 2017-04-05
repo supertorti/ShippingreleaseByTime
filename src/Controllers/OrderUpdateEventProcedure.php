@@ -79,7 +79,7 @@ class OrderUpdateEventProcedure {
 
 
         $date->setDate(date("Y"), date("m"), date("d"));
-        $date->setTime($ZeitpunktConfig, 00, 00);
+        $date->setTime(15, 00, 00);
 
         $FreigabeZeitpunkt = $date->getTimestamp();
 
