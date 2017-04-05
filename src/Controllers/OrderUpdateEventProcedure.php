@@ -78,7 +78,7 @@ class OrderUpdateEventProcedure {
         $this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("EventProcedure is triggerd! ");
 
 
-        //$ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.releasetime');
+        //$FreigabeZeitpunkt = $this->configRepository->get('ShippingreleaseByTime.releasetime');
 
 /*
         $dateTime->setDate(date("Y"), date("m"), date("d"));
@@ -86,7 +86,7 @@ class OrderUpdateEventProcedure {
 
         $FreigabeZeitpunkt = $dateTime->getTimestamp();
 */
-        if(TRUE){ //time() < $FreigabeZeitpunkt){
+        if(time() < strtotime('today 5pm')){
 
             // Update Order
             $this->orderRepositoryContract->updateOrder([
