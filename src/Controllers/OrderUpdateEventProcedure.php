@@ -50,12 +50,13 @@ class OrderUpdateEventProcedure {
      * @param Order\OrderRepositoryContract $orderRepositoryContract
      * @param CommentRepositoryContract $commentRepositoryContract
      * @param ConfigRepository $configRepository
+     * @param DateTime $dateTime
      */
     public function __construct(
         Order\OrderRepositoryContract $orderRepositoryContract,
         CommentRepositoryContract $commentRepositoryContract,
         ConfigRepository $configRepository,
-        DateTime $dateTime
+        \DateTime $dateTime
     ){
 
         $this->orderRepositoryContract     = $orderRepositoryContract;
