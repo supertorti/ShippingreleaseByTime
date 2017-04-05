@@ -1,0 +1,40 @@
+[
+  {
+    "tab"       : "Konfiguration",
+    "key"       : "UserID",
+    "label"     : "Benutzer-ID",
+    "type"      : "text",
+    "default"   : "1"
+  },
+  {
+    "tab"       : "Konfiguration",
+    "key"       : "AfterProcedureOrderStatus",
+    "label"     : "Auftragsstatus nach Freigabe",
+    "type"      : "text",
+    "default"   : "6.0"
+  },
+  {
+    "tab"       : "Konfiguration",
+    "key"       : "releasetime",
+    "label"     : "Uhrzeit bis Versandfreigabe",
+    "type"      : "text",
+    "possibleValues": {
+      "8": "08:00",
+      "9": "09:00",
+      "10": "10:00",
+      "11": "11:00",
+      "12": "12:00",
+      "13": "13:00",
+      "14": "14:00",
+      "15": "15:00",
+      "16": "16:00",
+      "17": "17:00",
+      "18": "18:00",
+      "19": "19:00",
+      "20": "20:00"
+
+    },
+    "default": "8"
+
+  }
+]

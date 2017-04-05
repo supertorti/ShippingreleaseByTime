@@ -1,0 +1,11 @@
+{
+  "name": "ShippingreleaseByTime",
+  "description": "Dieses Plugin ändert den Status eines Auftrags, abhängig von der Uhrzeit.",
+  "namespace": "ShippingreleaseByTime",
+  "author": "Thorsten Laing",
+  "version" : "0.1",
+  "type": "Backend",
+  "email" : "laing@web.de",
+  "isClosedSource": true,
+  "serviceProvider": "ShippingreleaseByTime\\Providers\\VersandfreigabeServiceProvider"
+}
