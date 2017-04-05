@@ -75,12 +75,12 @@ class OrderUpdateEventProcedure {
 
         //$ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.releasetime');
 
-
+/*
         $dateTime->setDate(date("Y"), date("m"), date("d"));
         $dateTime->setTime(15, 00, 00);
 
         $FreigabeZeitpunkt = $dateTime->getTimestamp();
-
+*/
         if(TRUE){ //time() < $FreigabeZeitpunkt){
 
             // Update Order
