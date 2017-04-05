@@ -15,6 +15,7 @@ use Plenty\Modules\Item\Variation\Contracts;
 use Plenty\Modules\Order\Shipping\Contracts as Shipping;
 use Plenty\Modules\Comment\Contracts\CommentRepositoryContract;
 use Plenty\Plugin\ConfigRepository;
+use DateTime;
 
 
 class OrderUpdateEventProcedure {
@@ -79,7 +80,12 @@ class OrderUpdateEventProcedure {
 
         $ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.AfterProcedureOrderStatus');
 
-        $FreigabeZeitpunkt = mktime($ZeitpunktConfig, 00, 00, date("m"), date("d"), date("Y"));
+
+        $date = new DateTime();
+        $date->setDate(date("Y"), date("m"), date("d"));
+        $date->setTime($ZeitpunktConfig, 30, 00);
+
+        $FreigabeZeitpunkt = $date->getTimestamp();
 
         if(time() < $FreigabeZeitpunkt){
 
