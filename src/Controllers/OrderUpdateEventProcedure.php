@@ -63,7 +63,6 @@ class OrderUpdateEventProcedure {
 
     /**
      * @param EventProceduresTriggered $eventTriggered
-     * @param DateTime $dateTime
      */
     public function Procedure(EventProceduresTriggered $eventTriggered){
 
