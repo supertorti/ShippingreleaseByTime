@@ -19,22 +19,22 @@
     "label"     : "Uhrzeit bis Versandfreigabe",
     "type"      : "dropdown",
     "possibleValues": {
-      "8am":  "08:00 Uhr",
-      "9am":  "09:00 Uhr",
-      "10am": "10:00 Uhr",
-      "11am": "11:00 Uhr",
-      "12am": "12:00 Uhr",
-      "1pm":  "13:00 Uhr",
-      "2pm":  "14:00 Uhr",
-      "3pm":  "15:00 Uhr",
-      "4pm":  "16:00 Uhr",
-      "5pm":  "17:00 Uhr",
-      "6pm":  "18:00 Uhr",
-      "7pm":  "19:00 Uhr",
-      "8pm":  "20:00 Uhr"
+      "8":  "08:00 Uhr",
+      "9":  "09:00 Uhr",
+      "10": "10:00 Uhr",
+      "11": "11:00 Uhr",
+      "12": "12:00 Uhr",
+      "13":  "13:00 Uhr",
+      "14":  "14:00 Uhr",
+      "15":  "15:00 Uhr",
+      "16":  "16:00 Uhr",
+      "17":  "17:00 Uhr",
+      "18":  "18:00 Uhr",
+      "19":  "19:00 Uhr",
+      "20":  "20:00 Uhr"
 
     },
-    "default": "8am"
+    "default": "8"
 
   }
 ]
