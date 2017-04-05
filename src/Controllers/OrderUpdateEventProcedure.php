@@ -77,13 +77,8 @@ class OrderUpdateEventProcedure {
 
         $FreigabeZeitpunkt = $this->TimeConvert[ $this->configRepository->get('ShippingreleaseByTime.releasetime') ];
 
-/*
-        $dateTime->setDate(date("Y"), date("m"), date("d"));
-        $dateTime->setTime(15, 00, 00);
 
-        $FreigabeZeitpunkt = $dateTime->getTimestamp();
-*/
-        if(time() < strtotime('today 5pm')){
+        if(time() < strtotime("today $FreigabeZeitpunkt")){
 
             // Update Order
             $this->orderRepositoryContract->updateOrder([
@@ -96,7 +91,7 @@ class OrderUpdateEventProcedure {
                 'referenceType'  => 'order',
                 'userId'         => $this->configRepository->get('ShippingreleaseByTime.UserID'),
                 'referenceValue' => $Order->id,
-                'text'           => "Auftrag zum Versand Freigegeben!",
+                'text'           => "Auftrag automatisch zum Tagesversand Freigegeben!",
                 'isVisibleForContact' => false
             ]);
         }
