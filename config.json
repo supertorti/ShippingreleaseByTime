@@ -17,7 +17,7 @@
     "tab"       : "Konfiguration",
     "key"       : "releasetime",
     "label"     : "Uhrzeit bis Versandfreigabe",
-    "type"      : "text",
+    "type"      : "dropdown",
     "possibleValues": {
       "8": "08:00",
       "9": "09:00",
