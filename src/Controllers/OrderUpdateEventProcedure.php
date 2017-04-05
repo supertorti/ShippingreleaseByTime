@@ -76,7 +76,7 @@ class OrderUpdateEventProcedure {
         $this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("EventProcedure is triggerd! ");
 
 
-        $ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.AfterProcedureOrderStatus');
+        $ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.releasetime');
 
 
 
