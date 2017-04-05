@@ -11,8 +11,6 @@ namespace ShippingreleaseByTime\Controllers;
 use Plenty\Modules\Order\Contracts as Order;
 use Plenty\Plugin\Log\Loggable;
 use Plenty\Modules\EventProcedures\Events\EventProceduresTriggered;
-use Plenty\Modules\Item\Variation\Contracts;
-use Plenty\Modules\Order\Shipping\Contracts as Shipping;
 use Plenty\Modules\Comment\Contracts\CommentRepositoryContract;
 use Plenty\Plugin\ConfigRepository;
 use DateTime;
@@ -65,7 +63,7 @@ class OrderUpdateEventProcedure {
      * @param EventProceduresTriggered $eventTriggered
      * @param DateTime $date
      */
-    public function Procedure(EventProceduresTriggered $eventTriggered, DateTime $date){
+    public function Procedure(EventProceduresTriggered $eventTriggered){
 
 
         /** @var Order $order */
@@ -78,14 +76,14 @@ class OrderUpdateEventProcedure {
 
         $ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.releasetime');
 
-
-
+/*
+        DateTime $date
         $date->setDate(date("Y"), date("m"), date("d"));
         $date->setTime($ZeitpunktConfig, 00, 00);
 
         $FreigabeZeitpunkt = $date->getTimestamp();
-
-        if(time() < $FreigabeZeitpunkt){
+*/
+        if(TRUE){ //time() < $FreigabeZeitpunkt){
 
             // Update Order
             $this->orderRepositoryContract->updateOrder([
