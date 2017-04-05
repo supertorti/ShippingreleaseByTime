@@ -78,7 +78,7 @@ class OrderUpdateEventProcedure {
         $this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("EventProcedure is triggerd! ");
 
 
-        //$FreigabeZeitpunkt = $this->configRepository->get('ShippingreleaseByTime.releasetime');
+        $FreigabeZeitpunkt = $this->configRepository->get('ShippingreleaseByTime.releasetime');
 
 /*
         $dateTime->setDate(date("Y"), date("m"), date("d"));
@@ -104,7 +104,7 @@ class OrderUpdateEventProcedure {
             ]);
         }
 
-        //$this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("Debug:" . $FreigabeZeitpunkt);
+        $this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("Debug:" . $FreigabeZeitpunkt);
 
 
     }
