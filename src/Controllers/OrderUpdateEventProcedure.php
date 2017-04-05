@@ -20,8 +20,6 @@ class OrderUpdateEventProcedure {
 
     use Loggable;
 
-
-
     /**
      * @var Order\OrderRepositoryContract $orderRepositoryContract
      */
@@ -55,14 +53,13 @@ class OrderUpdateEventProcedure {
     public function __construct(
         Order\OrderRepositoryContract $orderRepositoryContract,
         CommentRepositoryContract $commentRepositoryContract,
-        ConfigRepository $configRepository,
-        \DateTime $dateTime
+        ConfigRepository $configRepository
     ){
 
         $this->orderRepositoryContract     = $orderRepositoryContract;
         $this->commentRepositoryContract   = $commentRepositoryContract;
         $this->configRepository            = $configRepository;
-        $this->dateTime                    = $dateTime;
+        //$this->dateTime                    = $dateTime;
     }
 
 
