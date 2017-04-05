@@ -13,7 +13,6 @@ use Plenty\Plugin\Log\Loggable;
 use Plenty\Modules\EventProcedures\Events\EventProceduresTriggered;
 use Plenty\Modules\Comment\Contracts\CommentRepositoryContract;
 use Plenty\Plugin\ConfigRepository;
-use \DateTime;
 
 
 class OrderUpdateEventProcedure {
@@ -48,13 +47,13 @@ class OrderUpdateEventProcedure {
      * @param Order\OrderRepositoryContract $orderRepositoryContract
      * @param CommentRepositoryContract $commentRepositoryContract
      * @param ConfigRepository $configRepository
-     * @param DateTime $dateTime
+     * @param \DateTime $dateTime
      */
     public function __construct(
         Order\OrderRepositoryContract $orderRepositoryContract,
         CommentRepositoryContract $commentRepositoryContract,
         ConfigRepository $configRepository,
-        DateTime $dateTime
+        \DateTime $dateTime
     ){
 
         $this->orderRepositoryContract     = $orderRepositoryContract;
