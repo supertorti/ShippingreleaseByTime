@@ -99,7 +99,7 @@ class OrderUpdateEventProcedure {
             ]);
         }
 
-        $this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("Debug:" . $FreigabeZeitpunkt);
+        //$this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("Debug:" . $FreigabeZeitpunkt);
 
 
     }
