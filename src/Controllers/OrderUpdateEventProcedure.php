@@ -74,7 +74,7 @@ class OrderUpdateEventProcedure {
         $this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("EventProcedure is triggerd! ");
 
 
-        $ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.releasetime');
+        //$ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.releasetime');
 
 /*
         DateTime $date
@@ -90,6 +90,15 @@ class OrderUpdateEventProcedure {
                 'statusId'   => $this->configRepository->get('ShippingreleaseByTime.AfterProcedureOrderStatus'),
             ],
             $Order->id);
+
+            // Set comment
+            $this->commentRepositoryContract->createComment([
+                'referenceType'  => 'order',
+                'userId'         => $this->configRepository->get('ShippingreleaseByTime.UserID'),
+                'referenceValue' => $Order->id,
+                'text'           => "Auftrag zum Versand Freigegeben!",
+                'isVisibleForContact' => false
+            ]);
         }
 
 

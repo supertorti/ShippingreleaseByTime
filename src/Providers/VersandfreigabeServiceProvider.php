@@ -16,8 +16,8 @@ use ShippingreleaseByTime\Controllers\OrderUpdateEventProcedure;
 
 class VersandfreigabeServiceProvider extends ServiceProvider
 {
-
     use Loggable;
+
 
     public function register()
     {

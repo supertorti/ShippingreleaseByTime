@@ -2,7 +2,7 @@
   {
     "tab"       : "Konfiguration",
     "key"       : "UserID",
-    "label"     : "Benutzer-ID",
+    "label"     : "Benutzer-ID für Auftragsnotiz",
     "type"      : "text",
     "default"   : "1"
   },
