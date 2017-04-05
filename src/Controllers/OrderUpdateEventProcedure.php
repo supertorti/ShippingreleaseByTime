@@ -66,18 +66,17 @@ class OrderUpdateEventProcedure {
      */
     public function Procedure(EventProceduresTriggered $eventTriggered){
 
-
-        /** @var Order $order */
+        // Get the order
         $Order = $eventTriggered->getOrder();
 
-
-        // Log and check the Order that fired the Trigger
+        // Log the Order that fired the Trigger
         $this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("EventProcedure is triggerd! ");
 
-
+        // Get && convert Config->releasetime
         $FreigabeZeitpunkt = $this->TimeConvert[ $this->configRepository->get('ShippingreleaseByTime.releasetime') ];
 
 
+        // Do the stuff
         if(time() < strtotime("today $FreigabeZeitpunkt")){
 
             // Update Order
@@ -95,9 +94,6 @@ class OrderUpdateEventProcedure {
                 'isVisibleForContact' => false
             ]);
         }
-
-        $this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("Debug:" . $FreigabeZeitpunkt);
-
 
     }
 
