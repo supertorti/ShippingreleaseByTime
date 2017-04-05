@@ -13,7 +13,7 @@ use Plenty\Plugin\Log\Loggable;
 use Plenty\Modules\EventProcedures\Events\EventProceduresTriggered;
 use Plenty\Modules\Comment\Contracts\CommentRepositoryContract;
 use Plenty\Plugin\ConfigRepository;
-use DateTime;
+use \DateTime;
 
 
 class OrderUpdateEventProcedure {
