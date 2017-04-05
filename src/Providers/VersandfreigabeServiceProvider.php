@@ -33,8 +33,8 @@ class VersandfreigabeServiceProvider extends ServiceProvider
 
 
         $eventProceduresService->registerProcedure('ShippingreleaseByTime' , ProcedureEntry::PROCEDURE_GROUP_ORDER, [
-            'de' => 'Optimiere Versanddiestleister',
-            'en' => 'Optimize Shippingprovider'
+            'de' => 'Versandfreigabe nach Uhrzeit',
+            'en' => 'Shippingrelease by time'
 
         ], 'ShippingreleaseByTime\\Controllers\\OrderUpdateEventProcedure@Procedure');
 
