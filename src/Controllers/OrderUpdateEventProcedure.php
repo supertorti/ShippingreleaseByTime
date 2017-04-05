@@ -53,13 +53,14 @@ class OrderUpdateEventProcedure {
     public function __construct(
         Order\OrderRepositoryContract $orderRepositoryContract,
         CommentRepositoryContract $commentRepositoryContract,
-        ConfigRepository $configRepository
+        ConfigRepository $configRepository,
+        DateTime $dateTime
     ){
 
         $this->orderRepositoryContract     = $orderRepositoryContract;
         $this->commentRepositoryContract   = $commentRepositoryContract;
         $this->configRepository            = $configRepository;
-        //$this->dateTime                    = $dateTime;
+        $this->dateTime                    = $dateTime;
     }
 
 
