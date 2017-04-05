@@ -66,8 +66,9 @@ class OrderUpdateEventProcedure {
 
     /**
      * @param EventProceduresTriggered $eventTriggered
+     * @param DateTime $date
      */
-    public function Procedure(EventProceduresTriggered $eventTriggered){
+    public function Procedure(EventProceduresTriggered $eventTriggered, DateTime $date){
 
 
         /** @var Order $order */
@@ -81,7 +82,7 @@ class OrderUpdateEventProcedure {
         $ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.AfterProcedureOrderStatus');
 
 
-        $date = new DateTime();
+
         $date->setDate(date("Y"), date("m"), date("d"));
         $date->setTime($ZeitpunktConfig, 30, 00);
 
