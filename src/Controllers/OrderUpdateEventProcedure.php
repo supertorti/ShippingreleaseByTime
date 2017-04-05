@@ -63,7 +63,7 @@ class OrderUpdateEventProcedure {
      * @param EventProceduresTriggered $eventTriggered
      * @param DateTime $date
      */
-    public function Procedure(EventProceduresTriggered $eventTriggered){
+    public function Procedure(EventProceduresTriggered $eventTriggered, DateTime $date){
 
 
         /** @var Order $order */
@@ -76,13 +76,13 @@ class OrderUpdateEventProcedure {
 
         //$ZeitpunktConfig = $this->configRepository->get('ShippingreleaseByTime.releasetime');
 
-/*
-        DateTime $date
+
+
         $date->setDate(date("Y"), date("m"), date("d"));
         $date->setTime($ZeitpunktConfig, 00, 00);
 
         $FreigabeZeitpunkt = $date->getTimestamp();
-*/
+
         if(TRUE){ //time() < $FreigabeZeitpunkt){
 
             // Update Order
@@ -101,7 +101,7 @@ class OrderUpdateEventProcedure {
             ]);
         }
 
-
+        $this->getLogger(__FUNCTION__ . " OrderID: $Order->id ")->info("Debug:" . $FreigabeZeitpunkt);
 
 
     }
