@@ -24,7 +24,6 @@ class OrderUpdateEventProcedure {
 
 
 
-
     /**
      * @var Order\OrderRepositoryContract $orderRepositoryContract
      */
@@ -35,8 +34,6 @@ class OrderUpdateEventProcedure {
      * @var CommentRepositoryContract $commentRepositoryContract
      */
     protected $commentRepositoryContract;
-
-
 
 
     /**
@@ -84,7 +81,7 @@ class OrderUpdateEventProcedure {
 
 
         $date->setDate(date("Y"), date("m"), date("d"));
-        $date->setTime($ZeitpunktConfig, 30, 00);
+        $date->setTime($ZeitpunktConfig, 00, 00);
 
         $FreigabeZeitpunkt = $date->getTimestamp();
 
